@@ -131,7 +131,7 @@ if ! shopt -oq posix; then
 fi
 
 # set to working directory by default
-cd /mnt/d/ws/
+cd ~/ws/ || echo "~/ws/ does not exist as a directory"
 
 . "$HOME/.cargo/env"
 
