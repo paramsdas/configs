@@ -8,7 +8,6 @@ git:
     email: paramvir2307@gmail.com
 scoop:
   installFromConfig: true
-  setStartUpJob: true
   bucketList:
     - main
     - extras
