@@ -1,0 +1,24 @@
+user:
+  name: param0unt
+  workingDirectory: D:\workspace
+  enablePowerShellPrediction: false
+git:
+  user:
+    name: Paramvir Das
+    email: paramvir2307@gmail.com
+scoop:
+  installFromConfig: true
+  setStartUpJob: true
+  bucketList:
+    - main
+    - extras
+    - nerd-fonts
+    - versions
+  appList:
+    - 7zip
+    - JetBrains-Mono
+    - vlc
+    - vscode
+    - firefox-developer
+    - thunderbird
+
