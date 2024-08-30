@@ -1,2 +1,1 @@
-scoop update
-scoop update-a
+scoop update && scoop update -a && timeout 10
