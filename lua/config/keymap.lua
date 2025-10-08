@@ -26,9 +26,6 @@ vim.keymap.set('n', '<Leader>fmt', function()
   vim.lsp.buf.format()
 end)
 
-vim.keymap.set('i', '<S-f>', function()
-  vim.lsp.buf.format()
-end)
 
 vim.keymap.set('n', '<Leader>ff', function()
   save()
@@ -49,7 +46,8 @@ vim.keymap.set('n', '<Leader>fh', function()
   save()
   require('telescope.builtin').help_tags {}
 end)
-
+vim.keymap.set('n', '<leader>fg', require('telescope.builtin').live_grep, { desc = 'Telescope live grep' })
+vim.keymap.set('n', '<leader>fb', require('telescope.builtin').buffers, { desc = 'Telescope buffers' })
 vim.keymap.set("n", "-", "<CMD>Oil<CR>", { desc = "Open parent directory" })
 vim.keymap.set("n", "<Leader>w", "<CMD>:w<CR>", { desc = "Open parent directory" })
 vim.keymap.set("n", "<Leader>q", "<CMD>:q<CR>", { desc = "Open parent directory" })
