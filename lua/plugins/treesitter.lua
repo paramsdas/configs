@@ -5,7 +5,7 @@ return {
     config = function()
       require 'nvim-treesitter.configs'.setup {
         -- A list of parser names, or "all" (the listed parsers MUST always be installed)
-        ensure_installed = { "lua", "json", "yaml", "rust", "tsx", "javascript" },
+        ensure_installed = { "lua", "json", "yaml", "rust", "tsx", "svelte"},
         auto_install = false,
         indent = {
           enable = true,
