@@ -1,4 +1,4 @@
--- Custom functionskey
+-- Custom functions
 local save = function()
   if vim.fn.getbufvar(vim.fn.bufnr(), '&modified') == 1 then
     vim.cmd('write')
@@ -28,11 +28,6 @@ end)
 
 
 vim.keymap.set('n', '<Leader>ff', function()
-  save()
-  require('telescope.builtin').find_files()
-end)
-
-vim.keymap.set('n', '<C-f>', function()
   save()
   require('telescope.builtin').find_files()
 end)
