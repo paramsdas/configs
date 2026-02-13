@@ -7,3 +7,4 @@ global.autoindent = true
 global.smartindent = true
 global.number = true
 global.relativenumber = true
+global.foldlevel = 99
