@@ -16,10 +16,10 @@ end)
 
 vim.keymap.set('n', '<Leader>el', function()
   if vim.diagnostic.config().virtual_lines then
-		vim.diagnostic.config({ virtual_lines = false })
-	else
-		vim.diagnostic.config({ virtual_lines = { current_line = true } })
-	end
+    vim.diagnostic.config({ virtual_lines = false })
+  else
+    vim.diagnostic.config({ virtual_lines = { current_line = true } })
+  end
 end, { desc = 'Toggle diagnostic virtual_lines' })
 
 vim.keymap.set('n', '<Leader>fmt', function()
@@ -43,7 +43,11 @@ end)
 vim.keymap.set('n', '<leader>fg', require('telescope.builtin').live_grep, { desc = 'Telescope live grep' })
 vim.keymap.set('n', '<leader>fb', require('telescope.builtin').buffers, { desc = 'Telescope buffers' })
 vim.keymap.set('n', '-', '<CMD>Oil<CR>', { desc = 'Open parent directory' })
-vim.keymap.set('n', '<Leader>w', '<CMD>:w<CR>', { desc = 'Open parent directory' })
-vim.keymap.set('n', '<Leader>q', '<CMD>:q<CR>', { desc = 'Open parent directory' })
+vim.keymap.set('n', '<Leader>w', '<CMD>:w<CR>', { desc = 'write file' })
+vim.keymap.set('n', '<Leader>q', '<CMD>:q<CR>', { desc = 'quit file' })
+vim.keymap.set('n', '<Leader>n', function()
+  vim.print(vim.v.hlsearch)
+  vim.opt.hlsearch = vim.v.hlsearch ~= 1
+end, { desc = 'no highlight' })
 
 vim.keymap.set('x', '<Leader>cp', '"+y', { desc = 'copy to clipboard' })
