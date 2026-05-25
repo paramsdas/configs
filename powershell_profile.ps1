@@ -38,8 +38,10 @@ function prompt {
     Write-Host -NoNewline " [$loc] `u{f418} $branch_name ($commit_sha_short) :" -ForegroundColor DarkCyan
   }
   else {
-    Write-Host -NoNewline " [$loc] :" -ForegroundColor DarkBlue
+    Write-Host -NoNewline " [$loc]" -ForegroundColor DarkBlue
   }
+
+  Write-Host -NoNewline " `$"
 
   return " $([char]27)]9;9;`"$($loc.ProviderPath)`"$([char]27)\"
 }
