@@ -34,7 +34,8 @@ function prompt {
   $loc = $executionContext.SessionState.Path.CurrentLocation;
   Write-Host -NoNewline "$user_name" -ForegroundColor Green
   if ($branch_name -cne "") {
-    Write-Host -NoNewline " [$loc] <$branch_name> :" -ForegroundColor DarkCyan
+    $commit_sha_short=$(git rev-parse --short $branch_name)
+    Write-Host -NoNewline " [$loc] `u{f418} $branch_name ($commit_sha_short) :" -ForegroundColor DarkCyan
   }
   else {
     Write-Host -NoNewline " [$loc] :" -ForegroundColor DarkBlue
@@ -76,3 +77,4 @@ Set-Alias -Name ev -Value Edit-NeovimSettings
 $PSStyle.FileInfo.Directory = "`e[4;1m"
 
 Invoke-Expression (& { (zoxide init powershell | Out-String) })
+

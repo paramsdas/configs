@@ -56,17 +56,18 @@ function prompt_comand() {
     # Return code of last command
     RC=$?
     # defaults to avoid else cases
-    rc_out="\[\033[1;32m\]✔"
+    rc_out="\[\033[1;32m\]✔ "
     branch_result=""
     text_color="\[\033[1;34m\]"
     # get branch, if in a git repo
     branch=$(git branch 2>/dev/null | grep "^*" | colrm 1 2);
     # setting final values
     if [ $RC != 0 ]; then
-        rc_out="\[\033[1;31m\]✖"
+        rc_out="\[\033[1;31m\]✖ "
     fi
     if [ ! -z $branch ]; then
-        branch_result=$(echo " <$branch>")
+        commit=$(git rev-parse --short $branch)
+        branch_result=$(printf " \uf418 $branch ($commit)")
         text_color="\[\033[1;32m\]"
     fi
 
@@ -92,3 +93,4 @@ esac
 # pnpm end
 
 eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv bash)"
+
